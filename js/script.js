@@ -1,15 +1,18 @@
-alert("script 有執行");
+alert("1");
 
 const random = cards[
   Math.floor(Math.random() * cards.length)
 ];
 
-console.log(random);
+alert("2");
 
 document.querySelector(".subtitle").textContent = random.text;
 
+alert("3");
+
 document.querySelector("button").textContent =
-  random.actions[
-    Math.floor(Math.random() * random.actions.length)
-  ];
-console.log(random);
+random.actions[
+  Math.floor(Math.random() * random.actions.length)
+];
+
+alert("4");
