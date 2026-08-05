@@ -12,3 +12,4 @@ document.querySelector("button").textContent =
   random.actions[
     Math.floor(Math.random() * random.actions.length)
   ];
+console.log(random);
