@@ -1,4 +1,4 @@
-const cards = [
+window.cards = [
 
     {
         text: "如果需要 我在",
