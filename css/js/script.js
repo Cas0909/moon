@@ -1,2 +1,0 @@
-// Project Moon
-// JavaScript
