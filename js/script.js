@@ -1,9 +1,9 @@
 alert("1");
 
-alert(typeof cards);
+alert(typeof window.cards);
 
-const random = cards[
-    Math.floor(Math.random() * cards.length)
+const random = window.cards[
+    Math.floor(Math.random() * window.cards.length)
 ];
 
 alert("2");
