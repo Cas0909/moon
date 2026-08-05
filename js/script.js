@@ -1,5 +1,5 @@
-const random = window.cards[0];
+alert("開始");
 
-document.querySelector(".subtitle").textContent = random.text;
+document.querySelector(".subtitle").textContent = "測試文字";
 
-document.querySelector("button").textContent = random.actions[0];
+document.querySelector("button").textContent = "測試按鈕";
