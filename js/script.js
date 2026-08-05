@@ -1,4 +1,4 @@
-alert("JS正常");
+alert(window.cards.length);
 
 function showCard() {
 
