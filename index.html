@@ -12,7 +12,10 @@
 
 <body>
 
-    <main>
+<main>
+
+    <!-- 首頁 -->
+    <section id="home-screen">
 
         <div class="moon">🌙</div>
 
@@ -22,9 +25,32 @@
             今晚想停留一下嗎
         </p>
 
-        <button>我在</button>
+        <button id="enterBtn">
+            我在
+        </button>
 
-    </main>
+    </section>
+
+
+    <!-- 接住頁 -->
+    <section id="welcome-screen" class="hidden">
+
+        <div class="moon small">🌙</div>
+
+        <h2>今晚</h2>
+
+        <p class="subtitle">
+            不用急著說話<br>
+            先待一會就好
+        </p>
+
+        <button id="continueBtn">
+            繼續
+        </button>
+
+    </section>
+
+</main>
 
 <script src="data/cards.js"></script>
 <script src="js/script.js"></script>
