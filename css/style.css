@@ -93,7 +93,21 @@ button:hover{
     background:rgba(255,255,255,.12);
 
     transform:translateY(-2px);
+    }
+section{
+    opacity:1;
+    transition:opacity .4s ease;
+}
 
+.fade-in,
+.fade-out{
+    opacity:0;
+}
+
+@media (prefers-reduced-motion:reduce){
+    section{
+        transition:none;
+    }
 }
 .hidden{
     display:none;
