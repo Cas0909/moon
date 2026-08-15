@@ -5,6 +5,43 @@ const introScreen = document.querySelector("#intro-screen");
 const enterBtn = document.querySelector("#enterBtn");
 const continueBtn = document.querySelector("#continueBtn");
 
+const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+).matches;
+
+let isTransitioning = false;
+
+function switchScreen(currentScreen, nextScreen) {
+    if (isTransitioning) return;
+
+    if (prefersReducedMotion) {
+        currentScreen.classList.add("hidden");
+        nextScreen.classList.remove("hidden");
+        return;
+    }
+
+    isTransitioning = true;
+    currentScreen.classList.add("fade-out");
+
+    setTimeout(() => {
+        currentScreen.classList.add("hidden");
+        currentScreen.classList.remove("fade-out");
+
+        nextScreen.classList.add("fade-in");
+        nextScreen.classList.remove("hidden");
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                nextScreen.classList.remove("fade-in");
+
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 400);
+            });
+        });
+    }, 400);
+}
+
 const random = window.cards[
     Math.floor(Math.random() * window.cards.length)
 ];
@@ -17,11 +54,9 @@ enterBtn.textContent =
     ];
 
 enterBtn.addEventListener("click", () => {
-    homeScreen.classList.add("hidden");
-    welcomeScreen.classList.remove("hidden");
+    switchScreen(homeScreen, welcomeScreen);
 });
 
 continueBtn.addEventListener("click", () => {
-    welcomeScreen.classList.add("hidden");
-    introScreen.classList.remove("hidden");
+    switchScreen(welcomeScreen, introScreen);
 });
