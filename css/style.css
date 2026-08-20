@@ -98,7 +98,16 @@ section{
     opacity:1;
     transition:opacity .6s ease;
 }
+.path-list{
+    display:grid;
+    gap:14px;
+    width:min(100%,320px);
+    margin:0 auto;
+}
 
+.path-list button{
+    width:100%;
+}
 .fade-in,
 .fade-out{
     opacity:0;
