@@ -1,9 +1,11 @@
 const homeScreen = document.querySelector("#home-screen");
 const welcomeScreen = document.querySelector("#welcome-screen");
 const introScreen = document.querySelector("#intro-screen");
+const worldScreen = document.querySelector("#world-screen");
 
 const enterBtn = document.querySelector("#enterBtn");
 const continueBtn = document.querySelector("#continueBtn");
+const exploreBtn = document.querySelector("#exploreBtn");
 
 const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
@@ -59,4 +61,8 @@ enterBtn.addEventListener("click", () => {
 
 continueBtn.addEventListener("click", () => {
     switchScreen(welcomeScreen, introScreen);
+});
+
+exploreBtn.addEventListener("click", () => {
+    switchScreen(introScreen, worldScreen);
 });
