@@ -3,12 +3,15 @@ const welcomeScreen = document.querySelector("#welcome-screen");
 const introScreen = document.querySelector("#intro-screen");
 const worldScreen = document.querySelector("#world-screen");
 const moonScreen = document.querySelector("#moon-screen");
+const starsScreen = document.querySelector("#stars-screen");
 
 const enterBtn = document.querySelector("#enterBtn");
 const continueBtn = document.querySelector("#continueBtn");
 const exploreBtn = document.querySelector("#exploreBtn");
 const moonPathBtn = document.querySelector("#moonPathBtn");
+const starsPathBtn = document.querySelector("#starsPathBtn");
 const backFromMoonBtn = document.querySelector("#backFromMoonBtn");
+const backFromStarsBtn = document.querySelector("#backFromStarsBtn");
 
 const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
@@ -76,4 +79,12 @@ moonPathBtn.addEventListener("click", () => {
 
 backFromMoonBtn.addEventListener("click", () => {
     switchScreen(moonScreen, worldScreen);
+});
+
+starsPathBtn.addEventListener("click", () => {
+    switchScreen(worldScreen, starsScreen);
+});
+
+backFromStarsBtn.addEventListener("click", () => {
+    switchScreen(starsScreen, worldScreen);
 });
