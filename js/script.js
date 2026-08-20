@@ -4,14 +4,21 @@ const introScreen = document.querySelector("#intro-screen");
 const worldScreen = document.querySelector("#world-screen");
 const moonScreen = document.querySelector("#moon-screen");
 const starsScreen = document.querySelector("#stars-screen");
+const lighthouseScreen = document.querySelector("#lighthouse-screen");
 
 const enterBtn = document.querySelector("#enterBtn");
 const continueBtn = document.querySelector("#continueBtn");
 const exploreBtn = document.querySelector("#exploreBtn");
+
 const moonPathBtn = document.querySelector("#moonPathBtn");
 const starsPathBtn = document.querySelector("#starsPathBtn");
+const lighthousePathBtn = document.querySelector("#lighthousePathBtn");
+
 const backFromMoonBtn = document.querySelector("#backFromMoonBtn");
 const backFromStarsBtn = document.querySelector("#backFromStarsBtn");
+const backFromLighthouseBtn = document.querySelector(
+    "#backFromLighthouseBtn"
+);
 
 const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
@@ -87,4 +94,12 @@ starsPathBtn.addEventListener("click", () => {
 
 backFromStarsBtn.addEventListener("click", () => {
     switchScreen(starsScreen, worldScreen);
+});
+
+lighthousePathBtn.addEventListener("click", () => {
+    switchScreen(worldScreen, lighthouseScreen);
+});
+
+backFromLighthouseBtn.addEventListener("click", () => {
+    switchScreen(lighthouseScreen, worldScreen);
 });
