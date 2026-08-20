@@ -36,10 +36,10 @@ function switchScreen(currentScreen, nextScreen) {
 
                 setTimeout(() => {
                     isTransitioning = false;
-                }, 400);
+                }, 600);
             });
         });
-    }, 400);
+    }, 600);
 }
 
 const random = window.cards[
